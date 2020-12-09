@@ -8,6 +8,7 @@ async function run() {
     const title = core.getInput('title');
     const body = core.getInput('body');
     const repo = core.getInput('repo');
+    const assignee = core.getInput('assignee');
     core.info(`Creating issue with label ${label}...`);
 
     const octokit = new github.GitHub(token);
@@ -27,7 +28,7 @@ async function run() {
         labels: [label],
         title: title,
         body: body,
-        assignees: ['johnykov']
+        assignees: [assignee]
       })
       core.info(`created new issue ${issue.number}`);
       core.debug(issue);

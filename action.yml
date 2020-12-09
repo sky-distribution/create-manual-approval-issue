@@ -24,6 +24,10 @@ inputs:
     description: Other repo
     default: ${{ github.context.repo.repo }}
     required: false
+  assignee:
+    description: Assignee
+    default: ${{ github.context.actor }}
+    required: false
 outputs:
   issue-number:
     description: 'Number of the issue created (or found, if one already exists with the given label)'
