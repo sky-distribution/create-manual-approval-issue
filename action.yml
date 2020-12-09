@@ -20,6 +20,10 @@ inputs:
     description: The gitHub token used to create an authenticated client
     default: ${{ github.token }}
     required: false
+  repo:
+    description: Other repo
+    default: ${{ github.context.repo.repo }}
+    required: false
 outputs:
   issue-number:
     description: 'Number of the issue created (or found, if one already exists with the given label)'
