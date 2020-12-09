@@ -7,13 +7,14 @@ async function run() {
     const token = core.getInput('github-token');
     const title = core.getInput('title');
     const body = core.getInput('body');
+    const repo = core.getInput('repo');
     core.info(`Creating issue with label ${label}...`);
 
     const octokit = new github.GitHub(token);
 
     const opts = octokit.issues.listForRepo.endpoint.merge({
       owner: github.context.repo.owner,
-      repo: github.context.repo.repo,
+      repo: repo || github.context.repo.repo,
       labels: label,
       state: 'open',
     });
@@ -22,10 +23,11 @@ async function run() {
     if (issues == null || issues.length == 0) {
       const { data: issue } = await octokit.issues.create({
         owner: github.context.repo.owner,
-        repo: github.context.repo.repo,
+        repo: repo || github.context.repo.repo,
         labels: [label],
         title: title,
-        body: body
+        body: body,
+        assignees: ['johnykov']
       })
       core.info(`created new issue ${issue.number}`);
       core.debug(issue);
