@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/toppulous/create-manual-approval-issue.git"
+    "url": "git+https://github.com/sky-distribution/create-manual-approval-issue.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/toppulous/create-manual-approval-issue/issues"
+    "url": "https://github.com/sky-distribution/create-manual-approval-issue/issues"
   },
-  "homepage": "https://github.com/toppulous/create-manual-approval-issue#readme",
+  "homepage": "https://github.com/sky-distribution/create-manual-approval-issue#readme",
   "dependencies": {
     "@actions/core": "^1.2.4",
     "@actions/github": "^2.2.0"

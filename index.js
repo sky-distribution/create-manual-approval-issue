@@ -41,6 +41,12 @@ async function run() {
     core.info(`Found existing issue ${issues[0].number}`);
     core.debug(issues);
     core.setOutput('issue-number', issues[0].number);
+    await octokit.issues.addAssignees({
+      owner: github.context.repo.owner,
+      repo: repo || github.context.repo.repo,
+      issue_number: issues[0].number,
+      assignees: [assignee]
+    });
   } catch(error) {
     core.setFailed(error.message);
   }
