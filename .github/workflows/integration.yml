@@ -8,14 +8,14 @@ jobs:
     steps:
       - name: Create initial issue
         id: issue1
-        uses: toppulous/create-manual-approval-issue@master
+        uses: sky-distribution/create-manual-approval-issue@master
         with:
           label: dev-approval
       - run: |
           echo 'First issue id ${{ steps.issue1.outputs.issue-number }}'
       - name: Get initial issue
         id: issue2
-        uses: toppulous/create-manual-approval-issue@master
+        uses: sky-distribution/create-manual-approval-issue@master
         with:
           label: dev-approval
       - run: |
